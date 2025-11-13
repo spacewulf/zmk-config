@@ -15,7 +15,7 @@
                                         &kp LBKT    &kp RBKT                                                    &kp MINUS   &kp EQUAL 
 
                                         &mo 1       &kp SPACE   &kp DEL                 &kp BACKSPACE   &kp ENTER   &mo 2 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp LGUI        &kp ESC     &kp RCTRL>;
+                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp RMETA       &kp ESC     &kp RCTRL>;
         };
         layer-1 {
             display-name = "Layer 1";
@@ -27,7 +27,7 @@
                                         &kp LBKT    &kp RBKT                                                    &kp MINUS   &kp EQUAL 
 
                                         &kp N1      &kp SPACE   &kp DEL                 &kp BACKSPACE   &kp ENTER   &kp N6 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp LGUI        &kp ESC     &kp RCTRL>;
+                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp RMETA       &kp ESC     &kp RCTRL>;
         };
 
         layer-2 {
@@ -40,7 +40,7 @@
                                         &kp LBKT    &kp RBKT                                                    &kp MINUS   &kp EQUAL 
 
                                         &kp N1      &kp SPACE   &kp DEL                 &kp BACKSPACE   &kp ENTER   &kp N6 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp LGUI        &kp ESC     &kp RCTRL>;
+                                        &kp LCTRL   &kp LALT    &kp LGUI                &kp RMETA       &kp ESC     &kp RCTRL>;
         };
     };
 };
