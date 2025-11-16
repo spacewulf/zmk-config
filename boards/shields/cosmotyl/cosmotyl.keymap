@@ -6,41 +6,19 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Base";
-            bindings = <
-                &kp ESC     &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE
-                &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH 
-                &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
-                &kp LCTRL   &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RCTRL
-                                        &kp LBKT    &kp RBKT                                                                &kp MINUS   &kp EQUAL 
-
-                                        &mo 1       &kp SPACE   &kp DEL                             &kp BACKSPACE   &kp ENTER   &mo 2 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                            &kp RMETA       &kp ESC     &kp RCTRL>;
-        };
-        layer-1 {
-            display-name = "Layer 1";
-            bindings = <
-                &kp ESC     &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                  &kp N6          &kp N7          &kp N8          &kp N9          &kp N0      &kp GRAVE
-                &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y           &kp U           &kp I           &kp O           &kp P       &kp BSLH 
-                &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G                   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW &kp SEMI    &kp SQT
-                &kp LCTRL   &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp RCTRL
-                                        &kp LBKT    &kp RBKT                                                                &kp MINUS   &kp EQUAL 
-
-                                        &kp N1      &kp SPACE   &kp DEL                             &kp BACKSPACE   &kp ENTER   &kp N6 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                            &kp RMETA       &kp ESC     &kp RCTRL>;
+            bindings = <&kp SPACE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp SPACE &kp SPACE &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp SPACE &kp SPACE &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &kp SPACE &studio_unlock &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp SPACE &kp RBKT &kp LBKT &kp LBKT &kp RBKT &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
         };
 
-        layer-2 {
-            display-name = "Layer 2";
-            bindings = <
-                &studio_unlock     &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp GRAVE
-                &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp N7      &kp N8      &kp N9      &kp P       &kp BSLH 
-                &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H       &kp N4      &kp N5      &kp N6      &kp SEMI    &kp SQT
-                &kp LCTRL   &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp N       &kp N1      &kp N2      &kp N3      &kp FSLH    &kp RCTRL
-                                        &kp LBKT    &kp RBKT                                                                &kp N0      &kp DOT 
+        extra1 {
+            status = "reserved";
+        };
 
-                                        &kp N1      &kp SPACE   &kp DEL                             &kp BACKSPACE   &kp ENTER   &kp N6 
-                                        &kp LCTRL   &kp LALT    &kp LGUI                            &kp RMETA       &kp ESC     &kp RCTRL>;
+        extra2 {
+            status = "reserved";
+        };
+
+        extra3 {
+            status = "reserved";
         };
     };
 };
