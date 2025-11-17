@@ -1,8 +1,8 @@
 ---
 include:
   - board: cosmos_lemon_wireless
-    shield: cosmotyl_left
+    shield: spacetyl_left
     snippet: zmk-usb-logging;studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: cosmos_lemon_wireless
-    shield: cosmotyl_right
+    shield: spacetyl_right
