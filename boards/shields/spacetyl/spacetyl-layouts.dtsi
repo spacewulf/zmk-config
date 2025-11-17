@@ -1,0 +1,76 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    default_layout: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
+
+        keys
+            = <&key_physical_attrs 100 100 13 83 0 0 0>
+            , <&key_physical_attrs 100 100 119 83 0 0 0>
+            , <&key_physical_attrs 100 100 224 15 0 0 0>
+            , <&key_physical_attrs 100 100 336 0 0 0 0>
+            , <&key_physical_attrs 100 100 445 15 0 0 0>
+            , <&key_physical_attrs 100 100 553 15 0 0 0>
+            , <&key_physical_attrs 100 100 1063 15 0 0 0>
+            , <&key_physical_attrs 100 100 1172 15 0 0 0>
+            , <&key_physical_attrs 100 100 1281 0 0 0 0>
+            , <&key_physical_attrs 100 100 1392 15 0 0 0>
+            , <&key_physical_attrs 100 100 1498 83 0 0 0>
+            , <&key_physical_attrs 100 100 1604 83 0 0 0>
+            , <&key_physical_attrs 100 100 3 189 0 0 0>
+            , <&key_physical_attrs 100 100 113 189 0 0 0>
+            , <&key_physical_attrs 100 100 223 121 0 0 0>
+            , <&key_physical_attrs 100 100 338 106 0 0 0>
+            , <&key_physical_attrs 100 100 450 121 0 0 0>
+            , <&key_physical_attrs 100 100 563 121 0 0 0>
+            , <&key_physical_attrs 100 100 1054 121 0 0 0>
+            , <&key_physical_attrs 100 100 1166 121 0 0 0>
+            , <&key_physical_attrs 100 100 1279 106 0 0 0>
+            , <&key_physical_attrs 100 100 1394 121 0 0 0>
+            , <&key_physical_attrs 100 100 1504 189 0 0 0>
+            , <&key_physical_attrs 100 100 1613 189 0 0 0>
+            , <&key_physical_attrs 100 100 0 303 0 0 0>
+            , <&key_physical_attrs 100 100 111 303 0 0 0>
+            , <&key_physical_attrs 100 100 222 235 0 0 0>
+            , <&key_physical_attrs 100 100 338 220 0 0 0>
+            , <&key_physical_attrs 100 100 452 235 0 0 0>
+            , <&key_physical_attrs 100 100 566 235 0 0 0>
+            , <&key_physical_attrs 100 100 1051 235 0 0 0>
+            , <&key_physical_attrs 100 100 1164 235 0 0 0>
+            , <&key_physical_attrs 100 100 1278 220 0 0 0>
+            , <&key_physical_attrs 100 100 1395 235 0 0 0>
+            , <&key_physical_attrs 100 100 1506 303 0 0 0>
+            , <&key_physical_attrs 100 100 1617 303 0 0 0>
+            , <&key_physical_attrs 100 100 3 417 0 0 0>
+            , <&key_physical_attrs 100 100 113 417 0 0 0>
+            , <&key_physical_attrs 100 100 223 348 0 0 0>
+            , <&key_physical_attrs 100 100 338 334 0 0 0>
+            , <&key_physical_attrs 100 100 450 348 0 0 0>
+            , <&key_physical_attrs 100 100 563 348 0 0 0>
+            , <&key_physical_attrs 100 100 1054 348 0 0 0>
+            , <&key_physical_attrs 100 100 1166 348 0 0 0>
+            , <&key_physical_attrs 100 100 1279 334 0 0 0>
+            , <&key_physical_attrs 100 100 1394 348 0 0 0>
+            , <&key_physical_attrs 100 100 1504 417 0 0 0>
+            , <&key_physical_attrs 100 100 1613 417 0 0 0>
+            , <&key_physical_attrs 100 100 224 454 0 0 0>
+            , <&key_physical_attrs 100 100 336 440 0 0 0>
+            , <&key_physical_attrs 100 100 1281 440 0 0 0>
+            , <&key_physical_attrs 100 100 1392 454 0 0 0>
+            , <&key_physical_attrs 100 100 473 472 1084 523 522>
+            , <&key_physical_attrs 100 100 566 504 2824 616 554>
+            , <&key_physical_attrs 100 100 640 552 4096 690 602>
+            , <&key_physical_attrs 100 100 976 552 (-4096) 1026 602>
+            , <&key_physical_attrs 100 100 1050 504 (-2824) 1100 554>
+            , <&key_physical_attrs 100 100 1143 472 (-1084) 1193 522>
+            , <&key_physical_attrs 100 100 409 562 1562 459 612>
+            , <&key_physical_attrs 100 100 503 599 2824 553 649>
+            , <&key_physical_attrs 100 100 574 648 4138 624 698>
+            , <&key_physical_attrs 100 100 1043 648 (-4138) 1093 698>
+            , <&key_physical_attrs 100 100 1114 599 (-2824) 1164 649>
+            , <&key_physical_attrs 100 100 1208 562 (-1562) 1258 612>
+            ;
+    };
+};
