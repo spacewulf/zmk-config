@@ -1,0 +1,13 @@
+file_format: "1"
+id: spacetyl
+name: spacetyl
+type: shield
+url: https://github.com/rianadon/Cosmos-Keyboards
+features:
+  - keys
+  - underglow
+  - encoder
+  - studio
+siblings:
+  - spacetyl_left
+  - spacetyl_right
