@@ -1,13 +1,9 @@
-#include "spacetyl.dtsi"
+#include "cosmotyl.dtsi"
 
 / {
     bootloader_key: bootloader_key {
         compatible = "zmk,boot-magic-key";
-        key-position = <47>;
+        key-position = <48>;
         jump-to-bootloader;
     };
-};
-
-&default_transform {
-    col-offset = <7>;
 };
