@@ -11,7 +11,13 @@ manifest:
       remote: rianadon
       revision: main
       import: app/west.yml
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3
     - name: zmk-leader-key
+      remote: urob
+      revision: v0.3
+    - name: zmk-helpers
       remote: urob
       revision: v0.3
   self:
