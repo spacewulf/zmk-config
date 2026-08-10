@@ -14,12 +14,14 @@ manifest:
     - name: zmk-unicode
       remote: urob
       revision: v0.3
+    - name: zmk-helpers
+      remote: urob
+      revision: v0.3
     - name: zmk-leader-key
       remote: urob
       revision: v0.3
     - name: zmk-helpers
-      remote: urob
-      revision: v0.3
+      path: modules/key-labels
   self:
     path: config
     import: deps.yml
