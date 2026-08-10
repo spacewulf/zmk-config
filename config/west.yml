@@ -1,21 +1,23 @@
 manifest:
   remotes:
-    # - name: zmkfirmware
-    #   url-base: https://github.com/zmkfirmware
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: rianadon
       url-base: https://github.com/rianadon
     - name: urob
       url-base: https://github.com/urob
-    - name: sadekbaroudi
-      url-base: https://github.com/sadekbaroudi
-    - name: rianadon
-      url-base: https://github.com/rianadon
+    - name: vzhny
+      url-base: https://github.com/vzhny
 
   projects:
     - name: zmk
       remote: rianadon
-      revision: main
+      revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
       import: app/west.yml
+
+    - name: zmk-bootloader-hold
+      remote: vzhny
+      revision: v1.1.0
 
     - name: zmk-unicode
       remote: urob
@@ -28,11 +30,6 @@ manifest:
     - name: zmk-leader-key
       remote: urob
       revision: v0.3
-
-    - name: zmk-fingerpunch-vik
-      remote: rianadon
-      revision: main
-      import: config/deps.yml
 
   self:
     path: config
@@ -49,7 +46,7 @@ manifest:
 #   projects:
 #     - name: zmk
 #       remote: rianadon
-#       revision: main
+#       revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
 #       import: app/west.yml
 #
 #     - name: zmk-unicode
@@ -66,4 +63,3 @@ manifest:
 #
 #   self:
 #     path: config
-#     import: deps.yml

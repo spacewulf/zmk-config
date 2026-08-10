@@ -31,6 +31,7 @@
             ".dts"
             ".dtsi"
             ".json"
+            ".h"
             ".keymap"
             ".overlay"
             ".shield"
@@ -41,11 +42,11 @@
           board = "cosmos_lemon_wireless";
           shield = "cosmotyl_%PART%";
 
-          zephyrDepsHash = "sha256-tGKNRM42Y/aJoFabPywPBF2ojleLjEB40USeIkgUvRk=";
+          zephyrDepsHash = "sha256-l4uG39igPyr7FxrrtMpYdJ7fzqfM/wXGEwp8+mCjPEs=";
 
           extraWestBuildFlags = [
-            "zmk-usb-logging"
-            "studio-rpc-usb-uart"
+            # "zmk-usb-logging"
+            # "studio-rpc-usb-uart"
           ];
 
           meta = {
