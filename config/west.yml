@@ -1,11 +1,15 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    # - name: zmkfirmware
+    #   url-base: https://github.com/zmkfirmware
     - name: rianadon
       url-base: https://github.com/rianadon
     - name: urob
       url-base: https://github.com/urob
+    - name: sadekbaroudi
+      url-base: https://github.com/sadekbaroudi
+    - name: rianadon
+      url-base: https://github.com/rianadon
 
   projects:
     - name: zmk
@@ -25,9 +29,13 @@ manifest:
       remote: urob
       revision: v0.3
 
+    - name: zmk-fingerpunch-vik
+      remote: rianadon
+      revision: main
+      import: config/deps.yml
+
   self:
     path: config
-    import: deps.yml
 
 # manifest:
 #   remotes:

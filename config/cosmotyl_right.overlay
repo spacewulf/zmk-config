@@ -1,0 +1,26 @@
+#include "cosmotyl.dtsi"
+#include "68.h"
+
+/*                      Current Layout
+    ╭─────────────────────────┬─────────────────────────╮
+    │ LN5 LN4 LN3 LN2 LN1 LN0 │ RN0 RN1 RN2 RN3 RN4 RN5 │
+    │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+    │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+    │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+    │ LF3 LF2 LF1 LF0         │         RF0 RF1 RF2 RF3 │
+    ╰───────────────╮ LH1 LH0 │ RH0 RH1 ╭───────────────╯
+                    │ LH1 LH0 │ RH0 RH1 │
+                    │ LH1 LH0 │ RH0 RH1 │
+                    ╰─────────┴─────────╯             */
+
+/ {
+    bootloader_key: bootloader_key {
+        compatible = "zmk,boot-magic-key";
+        key-position = <RF3>;
+        jump-to-bootloader;
+    };
+};
+
+&default_transform {
+    col-offset = <7>;
+};

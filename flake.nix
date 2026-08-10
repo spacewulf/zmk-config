@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
     zmk-nix = {
       url = "github:lilyinstarlight/zmk-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,8 +42,6 @@
           shield = "cosmotyl_%PART%";
 
           zephyrDepsHash = "sha256-tGKNRM42Y/aJoFabPywPBF2ojleLjEB40USeIkgUvRk=";
-
-          enableZmkStudio = true;
 
           extraWestBuildFlags = [
             "zmk-usb-logging"
