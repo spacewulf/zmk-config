@@ -27,6 +27,7 @@ manifest:
 
     - name: key-labels
       path: modules/key-labels
+      revision: dfa7c695ffde41ef8064245453595d50e198ae1d
 
   self:
     path: config
