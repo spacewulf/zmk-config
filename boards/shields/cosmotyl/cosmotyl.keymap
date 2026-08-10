@@ -7,6 +7,10 @@
 
 #define QUICK_TAP_MS 175
 
+#define BASE 0
+#define NAV 1
+#define NUM 2
+
 
 
 /* #include "leader.dtsi" */
