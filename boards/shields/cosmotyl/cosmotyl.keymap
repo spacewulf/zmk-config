@@ -3,9 +3,10 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
 #include <behaviors/unicode.dtsi>
-/* #define CONFIG_WIRELESS */
+#include <labels.h>
 
 #define QUICK_TAP_MS 175
+
 
 
 /* #include "leader.dtsi" */

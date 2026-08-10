@@ -3,7 +3,8 @@
 / {
     bootloader_key: bootloader_key {
         compatible = "zmk,boot-magic-key";
-        key-position = <48>;
+        /* key-position = <48>; */
+        key-position = <LF3>;
         jump-to-bootloader;
     };
 };
