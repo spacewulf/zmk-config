@@ -1,0 +1,9 @@
+manifest:
+  remotes:
+    - name: rianadon
+      url-base: https://github.com/rianadon
+  projects:
+    - name: cosmos-zmk-module
+      remote: rianadon
+      revision: d76327385ea269b1450888c574c05ccab22beee6
+      import: config/west.yml

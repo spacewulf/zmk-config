@@ -13,11 +13,11 @@
                     │ LH1 LH0 │ RH0 RH1 │
                     ╰─────────┴─────────╯             */
 
-/ {
-    bootloader_key: bootloader_key {
-        compatible = "zmk,boot-magic-key";
-        /* key-position = <48>; */
-        key-position = <LF3>;
-        jump-to-bootloader;
-    };
-};
+/* / { */
+/*     bootloader_key: bootloader_key { */
+/*         compatible = "zmk,boot-magic-key"; */
+/*         /* key-position = <48>; */
+/*         key-position = <LF3>; */
+/*         jump-to-bootloader; */
+/*     }; */
+/* }; */

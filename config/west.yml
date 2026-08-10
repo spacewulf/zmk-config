@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: rianadon
-      url-base: https://github.com/rianadon
     - name: urob
       url-base: https://github.com/urob
     - name: vzhny
@@ -11,9 +9,13 @@ manifest:
 
   projects:
     - name: zmk
-      remote: rianadon
-      revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
+      remote: zmkfirmware
+      revision: 268b1b1e82150460f00fd701bcd08583d5c75d29
       import: app/west.yml
+    # - name: zmk
+    #   remote: rianadon
+    #   revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
+    #   import: app/west.yml
 
     - name: zmk-bootloader-hold
       remote: vzhny
@@ -33,6 +35,7 @@ manifest:
 
   self:
     path: config
+    import: deps.yml
 
 # manifest:
 #   remotes:
