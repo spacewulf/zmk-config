@@ -6,22 +6,28 @@ manifest:
       url-base: https://github.com/rianadon
     - name: urob
       url-base: https://github.com/urob
+
   projects:
     - name: zmk
       remote: rianadon
       revision: main
       import: app/west.yml
+
     - name: zmk-unicode
       remote: urob
       revision: v0.3
+
     - name: zmk-helpers
       remote: urob
       revision: v0.3
+
     - name: zmk-leader-key
       remote: urob
       revision: v0.3
-    - name: zmk-helpers
+
+    - name: key-labels
       path: modules/key-labels
+
   self:
     path: config
     import: deps.yml
