@@ -14,8 +14,13 @@
         }; \
     };
 
+/* German umlauts */
+ZMK_LEADER_SEQUENCE(de_ae,      &uc UC_DE_AE,         A)  // ä
+ZMK_LEADER_SEQUENCE(de_oe,      &uc UC_DE_OE,         O)  // ö
+ZMK_LEADER_SEQUENCE(de_ue,      &uc UC_DE_UE,         U)  // ü
+ZMK_LEADER_SEQUENCE(de_eszett,  &uc UC_DE_SS,         S)  // ß
 
-/* Greek Letters */
+/* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      E A)  // α
 ZMK_LEADER_SEQUENCE(el_beta,    &uc UC_EL_BETA,       E B)  // β
 ZMK_LEADER_SEQUENCE(el_gamma,   &uc UC_EL_GAMMA,      E G)  // γ
@@ -42,10 +47,10 @@ ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        E Y)  // ψ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
 
 // BLE and USB
-/* #ifdef CONFIG_WIRELESS */
-ZMK_LEADER_SEQUENCE(usb, &out OUT_USB, U S B)
-ZMK_LEADER_SEQUENCE(ble, &out OUT_BLE, B L E)
+ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
+ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
 
-/* #endif // CONFIG_WIRELESS */
-ZMK_LEADER_SEQUENCE(reset, &sys_reset, R E S E T)
-ZMK_LEADER_SEQUENCE(boot, &bootloader, B O O T)
+ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
+ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
+
+
