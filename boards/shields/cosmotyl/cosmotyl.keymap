@@ -13,8 +13,7 @@
 
 
 #include "combos.dtsi"
-
-/* #include "leader.dtsi" */
+#include "leader.dtsi"
 
 / {
     keymap {
