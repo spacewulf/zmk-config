@@ -12,6 +12,7 @@
 #define NUM 2
 
 
+#include "combos.dtsi"
 
 /* #include "leader.dtsi" */
 
