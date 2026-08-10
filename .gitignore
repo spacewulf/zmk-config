@@ -1,9 +1,15 @@
-.build
-.direnv
-.west
-modules
-firmware
-zephyr
-zmk
-zmk-*
-cirque-input-module
+/.west
+/modules
+/zephyr
+/zmk
+/build
+/result
+# .build
+# .direnv
+# .west
+# modules
+# firmware
+# zephyr
+# zmk
+# zmk-*
+# cirque-input-module

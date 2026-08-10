@@ -44,6 +44,13 @@
 
           zephyrDepsHash = "sha256-tGKNRM42Y/aJoFabPywPBF2ojleLjEB40USeIkgUvRk=";
 
+          enableZmkStudio = true;
+
+          extraWestBuildFlags = [
+            "zmk-usb-logging"
+            "studio-rpc-usb-uart"
+          ];
+
           meta = {
             description = "ZMK firmware";
             license = nixpkgs.lib.licenses.mit;
