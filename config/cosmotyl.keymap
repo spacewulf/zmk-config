@@ -5,8 +5,7 @@
 #include <behaviors/unicode.dtsi>
 #include <zmk-helpers/helper.h>
 
-#include "include/68.h"
-#include "68.h"
+#include "cosmotyl68.h"
 
 #define QUICK_TAP_MS 175
 
