@@ -45,9 +45,10 @@
           zephyrDepsHash = "sha256-LWxHC/sHMEjcbTzde320B8FxYzklXyfgOhgQBOQP28U=";
           # zephyrDepsHash = "sha256-l4uG39igPyr7FxrrtMpYdJ7fzqfM/wXGEwp8+mCjPEs=";
 
-          extraWestBuildFlags = [
-            # "zmk-usb-logging"
-            # "studio-rpc-usb-uart"
+          enableZmkStudio = true;
+
+          snippets = [
+            "zmk-usb-logging"
           ];
 
           meta = {

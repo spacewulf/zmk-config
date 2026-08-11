@@ -51,6 +51,6 @@ ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
 /* ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E) */
 
 ZMK_LEADER_SEQUENCE(reset,      &sys_reset,     R E S E T)
-ZMK_LEADER_SEQUENCE(boot,       &bootloader,    B O O T)
-
+ZMK_LEADER_SEQUENCE(boot_l,       &bootloader,    B O O T Q)
+ZMK_LEADER_SEQUENCE(boot_r,       &bootloader,    B O O T P)
 
