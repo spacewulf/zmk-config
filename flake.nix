@@ -42,7 +42,7 @@
           board = "lemon_wireless";
           shield = "cosmotyl_%PART%";
 
-          zephyrDepsHash = "sha256-LWxHC/sHMEjcbTzde320B8FxYzklXyfgOhgQBOQP28U=";
+          zephyrDepsHash = "sha256-vrrc3xTxbv1oxFnsVj9CDJ4Dx+2zqnNDlZFalGwOwq8=";
           # zephyrDepsHash = "sha256-l4uG39igPyr7FxrrtMpYdJ7fzqfM/wXGEwp8+mCjPEs=";
 
           enableZmkStudio = true;
