@@ -1,5 +1,4 @@
 #include "cosmotyl.dtsi"
-#include "68.h"
 
 /*                      Current Layout
     ╭─────────────────────────┬─────────────────────────╮
