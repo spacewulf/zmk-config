@@ -1,9 +1,9 @@
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
+#include <behaviors/unicode.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/bt.h>
-#include <behaviors/unicode.dtsi>
-#include <behaviors/num_word.dtsi>
 #include <zmk-helpers/helper.h>
 
 #include "cosmotyl68.h"
@@ -14,6 +14,10 @@
 #define NAV 1
 #define NUM 2
 
+&sl {
+    ignore-modifiers;
+};
+
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
@@ -23,29 +27,51 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+#define SMART_NUM &smart_num NUM 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+tapping-term-ms = <200>;)
+
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
+                bindings = <BINDING1>, <BINDING2>;)
+
+// Tap: comman | Shift + tap: semicolon | Ctrl + Shift  + tap: <.
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+
+// Tap: dot | Shift + tap: colon | Ctrl + Shift  + tap: >.
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+
 // Hack: Make HRM combos tap-only (cf, ZMK issue #544).
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
-
 #include "combos.dtsi"
 #include "leader.dtsi"
 #include "tap-dance.dtsi"
 
+&num_word {
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL TAB RETURN>;
+    ignore-numbers;
+};
 
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            display-name = "Base";
+    / {
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      display-name = "Base";
+      // clang-format off
             bindings = <&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                                      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp GRAVE
                         &kp TAB &kp Q &kp W &kp E &kp R &kp T                                                                           &kp Y &kp U &kp I &kp O &kp P &kp BSLH
                         &kp CAPS &kp A &kp S &kp D &kp F &kp G                                                                          &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
-                        &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp N &kp M &comma_morph &dot_morph &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &kp LBKT &kp RBKT                                                                            &kp MINUS &kp EQUAL &kp RALT &kp RCTRL
 
-                            &mo 1 &kp SPACE                                                                                                     &kp RETURN &num_word 2
+                            &mo 1 &kp SPACE                                                                                                     &kp RETURN SMART_NUM
                             &kp LALT &kp DEL                                                                                                    &kp BACKSPACE &kp ESC
                             &kp LGUI &kp LCTRL                                                                                                  &kp RCTRL &kp RGUI>;
         };
@@ -75,6 +101,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
                             &kp LALT &kp DEL                                                                                                    &kp BACKSPACE &kp ESC
                             &kp LCTRL &kp LGUI                                                                                                  &kp RGUI &kp RCTRL>;
         };
-    };
+    // clang-format on
+  };
 };
-

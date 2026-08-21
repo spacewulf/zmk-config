@@ -1,14 +1,17 @@
 #include <dt-bindings/zmk/behaviors.h>
 
 / {
-    behaviors {
-        lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&num_word 2 &mo 2>;
-            display-name = "Layer-tap";
-        };
+  behaviors {
+  lt:
+    layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      // clang-format off
+      #binding-cells = <2>;
+      // clang-format on
+      flavor = "tap-preferred";
+      tapping - term - ms = <200>;
+      bindings = <&num_word 2 & mo 2>;
+      display - name = "Layer-tap";
     };
+  };
 };
