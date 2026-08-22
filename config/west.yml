@@ -17,10 +17,6 @@ manifest:
     #   revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
     #   import: app/west.yml
 
-    - name: zmk-bootloader-hold
-      remote: vzhny
-      revision: v1.1.0
-
     - name: zmk-unicode
       remote: urob
       revision: v0.3
