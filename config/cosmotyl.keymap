@@ -67,7 +67,7 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
       // clang-format off
             bindings = <&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                                      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp GRAVE
                         &kp TAB &kp Q &kp W &kp E &kp R &kp T                                                                           &kp Y &kp U &kp I &kp O &kp P &kp BSLH
-                        &kp CAPS &kp A &kp S &kp D &kp F &kp G                                                                          &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
+                        &caps_word &kp A &kp S &kp D &kp F &kp G                                                                          &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
                         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp N &kp M &comma_morph &dot_morph &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &kp LBKT &kp RBKT                                                                            &kp MINUS &kp EQUAL &kp RALT &kp RCTRL
 
@@ -93,7 +93,7 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
             display-name = "Layer 2";
             bindings = <&kp GRAVE &rgb_ug RGB_TOG &rgb_ug RGB_COLOR_HSB(0, 0, 100) &rgb_ug RGB_BRD &rgb_ug RGB_BRI &kp N5               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &bt BT_CLR
                         &kp TAB &kp Q &kp W &kp E &kp R &kp T                                                                           &kp Y &kp N7 &kp N8 &kp N9 &kp P &kp TAB
-                        &kp CAPS &kp A &kp S &kp D &kp F &kp G                                                                          &kp H &kp N4 &kp N5 &kp N6 &kp SEMI &bootloader
+                        &caps_word &kp A &kp S &kp D &kp F &kp G                                                                          &kp H &kp N4 &kp N5 &kp N6 &kp SEMI &bootloader
                         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp KP_NUMLOCK &kp N1 &kp N2 &kp N3 &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &kp LBKT &kp RBKT                                                                                    &kp N0 &kp DOT &kp RALT &kp RCTRL
 
