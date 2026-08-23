@@ -7,6 +7,7 @@
 #include <zmk-helpers/helper.h>
 
 #include "cosmotyl68.h"
+#include "num-word.dtsi"
 
 #define QUICK_TAP_MS 175
 
@@ -27,11 +28,10 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+
 #define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
-tapping-term-ms = <200>;)
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced"; tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&excel_word NUM>; tapping-term-ms = <200>;)
 
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
@@ -54,10 +54,10 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 #include "leader.dtsi"
 #include "tap-dance.dtsi"
 
-&num_word {
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL TAB RETURN>;
-    ignore-numbers;
-};
+/* #ifndef ZMK_BASE_LAYER */
+/*     #define ZMK_BASE_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH) */
+/*         ZMK_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH) */
+/* #endif */
 
     / {
   keymap {

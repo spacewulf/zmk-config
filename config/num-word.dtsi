@@ -1,0 +1,12 @@
+#include <behaviors/num_word.dtsi>
+
+/ {
+  behaviors {
+    excel_word: excel_word {
+      compatible = "zmk,behavior-auto-layer";
+      #binding-cells = <1>;
+      continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL TAB RETURN>;
+      ignore-numbers;
+    };
+  };
+};
