@@ -1,13 +1,13 @@
 ---
 include:
-  - board: lemon_wireless//zmk
+  - board: lemon_wireless/nrf52840
     shield: cosmotyl_left
     # snippet: zmk-usb-logging;studio-rpc-usb-uart
     snippet: zmk-usb-logging
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: lemon_wireless//zmk
+  - board: lemon_wireless/nrf52840
     shield: cosmotyl_right
-  - board: lemon_wireless//zmk
+  - board: lemon_wireless/nrf52840
     shield: settings_reset
   - board: nice_nano//zmk
     shield: cosmotyl_dongle
