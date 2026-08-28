@@ -39,5 +39,5 @@ if SHIELD_cosmotyl_LEFT || SHIELD_cosmotyl_RIGHT || SHIELD_cosmotyl_DONGLE
 
 endif # SHIELD_cosmotyl_LEFT || SHIELD_cosmotyl_RIGHT
 
-config ZMK_BOARD_COMPAT
-    default y
+# config ZMK_BOARD_COMPAT
+#     default y
