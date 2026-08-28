@@ -8,8 +8,8 @@ include:
   - board: lemon_wireless
     shield: cosmotyl_right
   - board: lemon_wireless
-    shield: cosmotyl_settings_reset
-  - board: nice!nanov2
+    shield: settings_reset
+  - board: nice_nano
     shield: cosmotyl_dongle
-  - board: nice!nanov2
+  - board: nice_nano
     shield: settings_reset
