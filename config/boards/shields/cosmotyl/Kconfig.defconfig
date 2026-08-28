@@ -1,17 +1,39 @@
+if SHIELD_cosmotyl_DONGLE
+    config ZMK_KEYBOARD_NAME
+        default "cosmotyl"
 
-if SHIELD_cosmotyl_LEFT
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
 
-config ZMK_KEYBOARD_NAME
-    default "cosmotyl"
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 2
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+    config ZMK_USB
+        default y
 
-endif # SHIELD_cosmotyl_LEFT
+    config BT_MAX_CONN
+        default 7
 
-if SHIELD_cosmotyl_LEFT || SHIELD_cosmotyl_RIGHT
+    config BT_MAX_PAIRED
+        default 7
+endif
 
-config ZMK_SPLIT
-    default y
+# if SHIELD_cosmotyl_LEFT
+#
+#     config ZMK_KEYBOARD_NAME
+#         default "cosmotyl"
+#
+#     # config ZMK_SPLIT_ROLE_CENTRAL
+#     #     default y
+#
+# endif # SHIELD_cosmotyl_LEFT
+
+if SHIELD_cosmotyl_LEFT || SHIELD_cosmotyl_RIGHT || SHIELD_cosmotyl_DONGLE
+
+    config ZMK_SPLIT
+        default y
+
+    config ZMK_BLE
+        default y
 
 endif # SHIELD_cosmotyl_LEFT || SHIELD_cosmotyl_RIGHT

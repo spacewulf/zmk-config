@@ -23,6 +23,16 @@
         firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
           name = "firmware";
 
+          parts = [
+            "left"
+            "right"
+            "dongle"
+            "dongle_settings_reset"
+            "settings_reset"
+          ];
+
+          centralPart = "dongle";
+
           src = nixpkgs.lib.sourceFilesBySuffices self [
             ".board"
             ".cmake"
@@ -44,7 +54,10 @@
 
           zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
 
-          enableZmkStudio = true;
+          # enableZmkStudio = true;
+          extraCmakeFlags = [
+            "DSHIELD=settings_reset"
+          ];
 
           snippets = [
             "zmk-usb-logging"

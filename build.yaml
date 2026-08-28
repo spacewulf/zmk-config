@@ -2,7 +2,14 @@
 include:
   - board: lemon_wireless
     shield: cosmotyl_left
-    snippet: zmk-usb-logging;studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    # snippet: zmk-usb-logging;studio-rpc-usb-uart
+    snippet: zmk-usb-logging
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: lemon_wireless
     shield: cosmotyl_right
+  - board: lemon_wireless
+    shield: cosmotyl_settings_reset
+  - board: nice!nanov2
+    shield: cosmotyl_dongle
+  - board: nice!nanov2
+    shield: cosmotyl_dongle_settings_reset

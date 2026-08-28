@@ -7,7 +7,7 @@ features:
   - keys
   - underglow
   - encoder
-  - studio
+  # - studio
 siblings:
   - cosmotyl_left
   - cosmotyl_right
