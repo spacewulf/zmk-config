@@ -55,9 +55,9 @@
           zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
 
           # enableZmkStudio = true;
-          extraCmakeFlags = [
-            "DSHIELD=settings_reset"
-          ];
+          # extraCmakeFlags = [
+          #   "DSHIELD=settings_reset"
+          # ];
 
           snippets = [
             "zmk-usb-logging"

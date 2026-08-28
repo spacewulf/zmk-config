@@ -12,4 +12,4 @@ include:
   - board: nice!nanov2
     shield: cosmotyl_dongle
   - board: nice!nanov2
-    shield: cosmotyl_dongle_settings_reset
+    shield: settings_reset
