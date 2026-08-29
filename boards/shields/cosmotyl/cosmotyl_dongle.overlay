@@ -2,10 +2,15 @@
 #include "cosmotyl.dtsi"
 #include "cosmotyl-layouts.dtsi"
 
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &default_layout;
+    };
+
+    default_transform: keymap_transform_0 {
+        col-offset = <0>;
     };
 
     mock_kscan: mock_kscan_0 {
