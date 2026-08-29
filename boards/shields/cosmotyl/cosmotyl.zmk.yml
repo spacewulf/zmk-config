@@ -8,6 +8,8 @@ features:
   - underglow
   - encoder
   - studio
+requires:
+  - seeeduino_xiao_ble
 siblings:
   - cosmotyl_left
   - cosmotyl_right
