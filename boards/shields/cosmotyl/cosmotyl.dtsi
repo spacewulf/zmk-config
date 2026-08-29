@@ -11,7 +11,7 @@
 
 &spi1 {
     status = "okay";
-    cs-gpios = VIK_SPI_CS_PREFIX;
+    /* cs-gpios = VIK_SPI_CS_PREFIX; */
 
     shifter: 595@0 {
         compatible = "zmk,gpio-595";
