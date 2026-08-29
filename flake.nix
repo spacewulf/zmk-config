@@ -50,10 +50,6 @@
 
           zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
 
-          extraCmakeFlags = [
-            "DSHIELD=settings_reset"
-          ];
-
           snippets = [
             "zmk-usb-logging"
           ];
