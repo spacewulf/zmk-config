@@ -45,7 +45,7 @@
             "_defconfig"
           ];
 
-          board = "nice_nano//zmk";
+          board = "xiao_ble//zmk";
           shield = "cosmotyl_%PART%";
 
           zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
