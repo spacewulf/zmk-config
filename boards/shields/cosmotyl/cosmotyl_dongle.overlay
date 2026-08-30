@@ -6,6 +6,7 @@
     status = "disabled";
 };
 
+&kscan0 { status = "disabled"; };
 
 / {
     chosen {
