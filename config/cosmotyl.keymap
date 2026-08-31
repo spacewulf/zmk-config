@@ -76,7 +76,7 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
                         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp N &kp M &comma_morph &dot_morph &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &kp LBKT &kp RBKT                                                                            &kp MINUS &kp EQUAL &kp RALT &kp RCTRL
 
-                            SMART_SYS &kp SPACE                                                                                                     &kp RETURN SMART_NUM
+                            SMART_SYS &kp SPACE                                                                                                 &kp RETURN SMART_NUM
                             &kp LALT &kp DEL                                                                                                    &kp BACKSPACE &kp ESC
                             &kp LGUI &kp LCTRL                                                                                                  &kp RCTRL &kp RGUI>;
         };
