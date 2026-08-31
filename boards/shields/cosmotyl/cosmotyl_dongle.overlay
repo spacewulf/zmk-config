@@ -1,8 +1,11 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
 /* #include "cosmotyl.dtsi" */
 #include "cosmotyl-layouts.dtsi"
+#include <dt-bindings/led/led.h>
 
+&default_layout {
+    transform = <&default_transform>;
+};
 
 /* &spi1 { */
 /*     status = "disabled"; */
@@ -10,10 +13,20 @@
 /**/
 /* &kscan0 { status = "disabled"; }; */
 
-&pinctrl {
-    spi3_default: spi3_default {
+&spi1 {
+    spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 5)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 2)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 3)>;
+        };
+    };
+
+    spi1_sleep: spi1_sleep {
+        group1 {
+
+            psels = <NRF_PSEL(SPIM_SCK, 0, 2)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 3)>;
+            low-power-enable;
         };
     };
 };
@@ -22,8 +35,9 @@
     compatible = "nordic,nrf-spim";
     status = "okay";
 
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-names = "default";
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
@@ -34,9 +48,11 @@
 
         /* WS2812 */
         chain-length = <0>;
-        spi-one-frame = <0xE0>;
-        spi-zero-frame = <0x80>;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
     };
 };
 
