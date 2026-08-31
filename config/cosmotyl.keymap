@@ -36,6 +36,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&excel_word NUM>; tapping-
 
 #define SMART_SYS &smart_sys NAV 0
 ZMK_HOLD_TAP(smart_sys, bindings = <&mo>, <&sys_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
+
 ZMK_TAP_DANCE(sys_dance, bindings = <&sl SYS>, <&tog SYS>; tapping-term-ms = <250>;)
 
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -57,12 +58,19 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 #include "combos.dtsi"
 #include "leader.dtsi"
+/* #include "mouse.dtsi" */
 #include "tap-dance.dtsi"
 
 /* #ifndef ZMK_BASE_LAYER */
 /*     #define ZMK_BASE_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH) */
 /*         ZMK_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH) */
 /* #endif */
+#define RGB_UP &rgb_ug RGB_BRI
+#define RGB_DN &rgb_ug RGB_BRD
+#define RGB_WT &rgb_ug RGB_COLOR_HSB(200, 0, 100)
+#define RGB_TG &rgb_ug RGB_TOG
+#define VOL_UP &kp C_VOLUME_UP
+#define VOL_DN &kp C_VOLUME_DOWN
 
     / {
   keymap {
@@ -84,8 +92,8 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
         layer-1 {
             display-name = "NAV";
             bindings = <&kp F12 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                                                      &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-                        &kp TAB &kp Q &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_VOLUME_UP                                            &kp Y &kp U &kp I &kp O &kp P &kp C_VOLUME_UP
-                        &bootloader &kp LEFT_ARROW &kp UP_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp C_VOLUME_DOWN                        &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp SEMI &kp C_VOLUME_DOWN
+                        &kp TAB &kp Q &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT VOL_UP                                                     &kp Y &kp U &kp I &kp O &kp P &kp C_VOLUME_UP
+                        &bootloader &kp LEFT &kp UP &kp DOWN &kp RIGHT VOL_DN                                                           &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMI &kp C_VOLUME_DOWN
                         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &kp LBKT &kp RBKT                                                                            &kp MINUS &kp EQUAL &kp RALT &kp RCTRL
 
@@ -96,7 +104,7 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
         layer-2 {
             display-name = "NUM";
-            bindings = <&kp GRAVE &rgb_ug RGB_TOG &rgb_ug RGB_COLOR_HSB(0, 0, 100) &rgb_ug RGB_BRD &rgb_ug RGB_BRI &kp N5               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &bt BT_CLR
+            bindings = <&kp GRAVE RGB_TG RGB_WT RGB_DN RGB_UP &kp N5                                                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &bt BT_CLR
                         &kp TAB &kp Q &kp W &kp E &kp R &kp T                                                                           &kp Y &kp N7 &kp N8 &kp N9 &kp P &kp TAB
                         &caps_word &kp A &kp S &kp D &kp F &kp G                                                                        &kp H &kp N4 &kp N5 &kp N6 &kp SEMI &bootloader
                         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                                                                         &kp KP_NUMLOCK &kp N1 &kp N2 &kp N3 &kp FSLH &kp RSHFT
