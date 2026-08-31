@@ -10,7 +10,7 @@
 /**/
 /* &kscan0 { status = "disabled"; }; */
 
-/ &pinctrl {
+&pinctrl {
     spi3_default: spi3_default {
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 5)>;
@@ -18,7 +18,7 @@
     };
 };
 
-/ &spi3 {
+&spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
 
