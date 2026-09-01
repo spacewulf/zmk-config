@@ -19,7 +19,7 @@ manifest:
 
     - name: zmk-unicode
       remote: urob
-      revision: v0.3
+      revision: 5f458b6f1fd8ca83f4aba793c2a64916522507e9
 
     - name: zmk-auto-layer
       remote: urob
