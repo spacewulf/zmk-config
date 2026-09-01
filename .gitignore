@@ -1,8 +1,3 @@
-/.west
-/modules
-/zmk
-/build
-/result
 # .build
 # .direnv
 # .west
@@ -12,3 +7,17 @@
 # zmk
 # zmk-*
 # cirque-input-module
+.build
+.direnv
+.west
+modules
+firmware
+zephyr
+zmk
+draw/base.yaml
+draw/overview.yaml
+cosmos-zmk-module
+zmk-auto-layer
+zmk-helpers
+zmk-leader-key
+zmk-unicode
