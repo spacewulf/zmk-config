@@ -36,9 +36,6 @@ if SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT || SHIELD_spacetyl_DONGLE
     config ZMK_BLE
         default y
 
-    config USB_DEVICE_MANUFACTURER
-        default "Kees Wolterstorff"
-
     config ZMK_BOARD_COMPAT
         default y
 
