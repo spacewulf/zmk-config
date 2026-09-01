@@ -31,7 +31,7 @@ manifest:
 
     - name: zmk-leader-key
       remote: urob
-      revision: v0.3
+      revision: 43029f6fb950dec382774e60c6bcc020a906c942
 
   self:
     path: config
