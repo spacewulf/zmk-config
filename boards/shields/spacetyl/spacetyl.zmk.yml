@@ -1,6 +1,6 @@
 file_format: "1"
-id: cosmotyl
-name: cosmotyl
+id: spacetyl
+name: spacetyl
 type: shield
 url: https://github.com/rianadon/Cosmos-Keyboards
 features:
@@ -11,6 +11,6 @@ features:
 requires:
   - seeeduino_xiao_ble
 siblings:
-  - cosmotyl_left
-  - cosmotyl_right
-  - cosmotyl_dongle
+  - spacetyl_left
+  - spacetyl_right
+  - spacetyl_dongle

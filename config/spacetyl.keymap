@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <zmk-helpers/helper.h>
 
-#include "cosmotyl68.h"
+#include "spacetyl68.h"
 #include "num-word.dtsi"
 
 #define QUICK_TAP_MS 175

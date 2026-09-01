@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-/* #include "cosmotyl.dtsi" */
-#include "cosmotyl-layouts.dtsi"
+/* #include "spacetyl.dtsi" */
+#include "spacetyl-layouts.dtsi"
 #include <dt-bindings/led/led.h>
 
 &default_layout {

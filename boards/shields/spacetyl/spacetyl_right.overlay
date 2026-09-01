@@ -1,4 +1,4 @@
-#include "cosmotyl.dtsi"
+#include "spacetyl.dtsi"
 
 /*                      Current Layout
     ╭─────────────────────────┬─────────────────────────╮
@@ -15,8 +15,11 @@
 /* / { */
 /*     bootloader_key: bootloader_key { */
 /*         compatible = "zmk,boot-magic-key"; */
-/*         /* key-position = <48>; */
-/*         key-position = <LF3>; */
+/*         key-position = <RF3>; */
 /*         jump-to-bootloader; */
 /*     }; */
 /* }; */
+
+&default_transform {
+    col-offset = <7>;
+};
