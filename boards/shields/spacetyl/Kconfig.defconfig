@@ -36,6 +36,9 @@ if SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT || SHIELD_spacetyl_DONGLE
     config ZMK_BLE
         default y
 
+    config USB_DEVICE_MANUFACTURER
+        default "Kees Wolterstorff"
+
 endif # SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT
 
 if SHIELD_spacetyl_LEFT
@@ -47,6 +50,3 @@ if SHIELD_spacetyl_RIGHT
     config ZMK_KEYBOARD_NAME
         default "spacetyl_right"
 endif
-
-config ZMK_BOARD_COMPAT
-    default y
