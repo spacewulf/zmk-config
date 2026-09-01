@@ -1,5 +1,5 @@
-config SHIELD_spacetyl_DONGLE
-    def_bool $(shields_list_contains,spacetyl_dongle)
+# config SHIELD_spacetyl_DONGLE
+#     def_bool $(shields_list_contains,spacetyl_dongle)
 
 config SHIELD_spacetyl_LEFT
     def_bool $(shields_list_contains,spacetyl_left)

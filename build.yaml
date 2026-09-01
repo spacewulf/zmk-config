@@ -10,15 +10,15 @@ include:
     shield: spacetyl_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: xiao_ble//zmk
-    shield: spacetyl_dongle
-    snippet: zmk-usb-logging;studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: xiao_ble//zmk
+  #   shield: spacetyl_dongle
+  #   snippet: zmk-usb-logging;studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: nice_nano//zmk
-    shield: spacetyl_dongle
-    snippet: zmk-usb-logging;studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: nice_nano//zmk
+  #   shield: spacetyl_dongle
+  #   snippet: zmk-usb-logging;studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # - board: lemon_wireless/nrf52840
   #   shield: settings_reset
