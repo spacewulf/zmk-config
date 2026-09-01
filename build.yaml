@@ -2,9 +2,9 @@
 include:
   - board: lemon_wireless/nrf52840
     shield: spacetyl_left
-    # snippet: zmk-usb-logging;studio-rpc-usb-uart
+    snippet: zmk-usb-logging;studio-rpc-usb-uart
     # snippet: zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: lemon_wireless/nrf52840
     shield: spacetyl_right
