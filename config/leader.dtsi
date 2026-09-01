@@ -15,6 +15,10 @@
     };                                                                         \
   };
 
+&uc {
+  default-mode = <UC_MODE_LINUX>;
+};
+
 /* German umlauts */
 ZMK_LEADER_SEQUENCE(de_ae, &uc UC_DE_AE, A)     // ä
 ZMK_LEADER_SEQUENCE(de_oe, &uc UC_DE_OE, O)     // ö
