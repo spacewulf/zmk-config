@@ -15,10 +15,10 @@ include:
     snippet: zmk-usb-logging;studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # - board: nice_nano//zmk
-  #   shield: spacetyl_dongle
-  #   snippet: zmk-usb-logging;studio-rpc-usb-uart
-  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano//zmk
+    shield: spacetyl_dongle
+    snippet: zmk-usb-logging;studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # - board: lemon_wireless/nrf52840
   #   shield: settings_reset
