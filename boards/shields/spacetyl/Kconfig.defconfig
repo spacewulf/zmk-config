@@ -30,7 +30,6 @@ endif
 
 if SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT || SHIELD_spacetyl_DONGLE
 
-
     config ZMK_SPLIT
         default y
 
@@ -38,6 +37,16 @@ if SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT || SHIELD_spacetyl_DONGLE
         default y
 
 endif # SHIELD_spacetyl_LEFT || SHIELD_spacetyl_RIGHT
+
+if SHIELD_spacetyl_LEFT
+    config ZMK_KEYBOARD_NAME
+        default "spacetyl_left"
+endif
+
+if SHIELD_spacetyl_RIGHT
+    config ZMK_KEYBOARD_NAME
+        default "spacetyl_right"
+endif
 
 config ZMK_BOARD_COMPAT
     default y
