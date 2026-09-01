@@ -12,8 +12,10 @@ include:
 
   - board: xiao_ble//zmk
     shield: cosmotyl_dongle
+    snippet: zmk-usb-logging;studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: lemon_wireless/nrf52840
-    shield: settings_reset
-  - board: xiao_ble//zmk
-    shield: settings_reset
+  # - board: lemon_wireless/nrf52840
+  #   shield: settings_reset
+  # - board: xiao_ble//zmk
+  #   shield: settings_reset

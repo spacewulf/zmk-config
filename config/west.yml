@@ -27,7 +27,7 @@ manifest:
 
     - name: zmk-helpers
       remote: urob
-      revision: v0.3
+      revision: 4c71f803db34f5b888a1d09ef699e8e58d03f393
 
     - name: zmk-leader-key
       remote: urob
