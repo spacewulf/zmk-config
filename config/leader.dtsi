@@ -58,8 +58,8 @@ ZMK_LEADER_SEQUENCE(el_omega, &uc UC_EL_OMEGA, E W)     // ω
 ZMK_LEADER_SEQUENCE(bt0, &bt BT_SEL 0, B N0)
 ZMK_LEADER_SEQUENCE(bt1, &bt BT_SEL 1, B N1)
 ZMK_LEADER_SEQUENCE(bt2, &bt BT_SEL 2, B N2)
-ZMK_LEADER_SEQUENCE(btc, &bt BT_CLR, C L E A R)
+/* ZMK_LEADER_SEQUENCE(btc, &bt BT_CLR, C L E A R) */
 
-ZMK_LEADER_SEQUENCE(reset, &sys_reset, R E S E T)
+/* ZMK_LEADER_SEQUENCE(reset, &sys_reset, R E S E T) */
 ZMK_LEADER_SEQUENCE(boot, &bootloader, B O O T)
-ZMK_LEADER_SEQUENCE(pause, &kp C_PLAY_PAUSE, P L A Y)
+/* ZMK_LEADER_SEQUENCE(pause, &kp C_PLAY_PAUSE, P L A Y) */
