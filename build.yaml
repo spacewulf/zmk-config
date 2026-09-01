@@ -3,7 +3,7 @@ include:
   - board: lemon_wireless/nrf52840
     shield: cosmotyl_left
     # snippet: zmk-usb-logging;studio-rpc-usb-uart
-    snippet: zmk-usb-logging
+    # snippet: zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: lemon_wireless/nrf52840
@@ -14,6 +14,11 @@ include:
     shield: cosmotyl_dongle
     snippet: zmk-usb-logging;studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # - board: nice_nano//zmk
+  #   shield: cosmotyl_dongle
+  #   snippet: zmk-usb-logging;studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # - board: lemon_wireless/nrf52840
   #   shield: settings_reset
