@@ -6,10 +6,12 @@
     zephyr.url = "github:zmkfirmware/zephyr/v4.1.0+zmk-fixes";
     zephyr.flake = false;
 
+    zephyr-nix = {
+      url = "github:nix-community/zephyr-nix";
+      inputs.zephyr.follows = "zephyr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Zephyr sdk and toolchain.
-    zephyr-nix.url = "github:nix-community/zephyr-nix";
-    zephyr-nix.inputs.zephyr.follows = "zephyr";
-    zephyr-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # Devicetree linter; use my fork for nix-package and ZMK-specific tweaks.
     dts-linter.url = "github:urob/dts-linter/zmk";
@@ -56,19 +58,10 @@
 
               pkgs.just
               pkgs.yq # Make sure yq resolves to python-yq.
+              pkgs.protobuf
 
               keymap_drawer
               dts-format
-              pkgs.protobuf
-
-              # -- Used by just_recipes and west_commands. Most systems already have them. --
-              # pkgs.gawk
-              # pkgs.unixtools.column
-              # pkgs.coreutils # cp, cut, echo, mkdir, sort, tail, tee, uniq, wc
-              # pkgs.diffutils
-              # pkgs.findutils # find, xargs
-              # pkgs.gnugrep
-              # pkgs.gnused
             ];
 
             env = {
