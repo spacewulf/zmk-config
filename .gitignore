@@ -3,6 +3,19 @@
 /zmk
 /build
 /result
+/zephyr
+.build
+.direnv
+.west
+modules
+firmware
+zephyr
+zmk
+draw/base.yaml
+draw/overview.yaml
+cosmos-zmk-module
+zmk
+zmk-*
 # .build
 # .direnv
 # .west
