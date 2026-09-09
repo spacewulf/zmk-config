@@ -13,7 +13,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: 268b1b1e82150460f00fd701bcd08583d5c75d29
-      # #path: modules/firmware/zmk
+      # path: modules/firmware/zmk
       import: app/west.yml
     # - name: zmk
     #   remote: rianadon
@@ -22,28 +22,43 @@ manifest:
     - name: zmk-unicode
       remote: urob
       revision: 5f458b6f1fd8ca83f4aba793c2a64916522507e9
-      # #path: modules/zmk/unicode
+      path: modules/zmk/unicode
 
     - name: zmk-auto-layer
       remote: urob
       revision: 62c201934711369d50a28df12e1d055d05cb6460
-      #path: modules/zmk/auto-layer
+      path: modules/zmk/auto-layer
 
     - name: zmk-helpers
       remote: urob
       revision: 4c71f803db34f5b888a1d09ef699e8e58d03f393
-      #path: modules/zmk/helpers
+      path: modules/zmk/helpers
 
     - name: zmk-leader-key
       remote: urob
       revision: 43029f6fb950dec382774e60c6bcc020a906c942
-      #path: modules/zmk/leader-key
+      path: modules/zmk/leader-key
 
     - name: cosmos-zmk-module
       remote: rianadon
       revision: d76327385ea269b1450888c574c05ccab22beee6
-      #path: modules/zmk/cosmos
+      path: modules/zmk/cosmos
       import: config/west.yml
+
+    - name: zephyr
+      remote: zmkfirmware
+      revision: 10ba6d0cb38bc3d258775d27982f707599320085
+      path: modules/zephyr
+      clone-depth: 1
+      import:
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - mbedtls
+          - tinycrypt
 
   self:
     path: config
