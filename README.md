@@ -12,9 +12,9 @@ the former for the splits and the latter for the dongle.
 
 ## Building
 
-This branch uses a nix toolchain featured
-[here](https://github.com/lilyinstarlight/zmk-nix). Run `nix build` to build the
-firmware. Note, I have not tested this currently with the dongle, as that has to
-be compiled separately using `nix build .#firmware_dongle`, as the original
-toolchain does not provide a method for compiling firmware for different boards
-at the same time.
+This branch of my `zmk-config` is built using a nix devshell, along with direnv.
+To build it, make sure you have nix installed and flakes enabled, as well as
+nix-direnv hooked in to your shell. Once you've done that, enter the directory
+and type `direnv allow`, which will start to pull dependencies, followed by a
+`just init` to fetch all of the dependencies. Once that has completed, run
+`just build all` to build the firmware.

@@ -1,27 +1,13 @@
-/.west
-/modules
-/zmk
-/build
-/result
-/zephyr
 .build
 .direnv
 .west
 modules
 firmware
-zephyr
 zmk
 draw/base.yaml
 draw/overview.yaml
 cosmos-zmk-module
-zmk
-zmk-*
-# .build
-# .direnv
-# .west
-# modules
-# firmware
-# zephyr
-# zmk
-# zmk-*
-# cirque-input-module
+zmk-auto-layer
+zmk-helpers
+zmk-leader-key
+zmk-unicode

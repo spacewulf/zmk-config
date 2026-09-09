@@ -1,118 +1,96 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    zmk-nix = {
-      url = "github:lilyinstarlight/zmk-nix";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # This pins requirements.txt provided by zephyr-nix.pythonEnv.
+    zephyr.url = "github:zmkfirmware/zephyr/v4.1.0+zmk-fixes";
+    zephyr.flake = false;
+
+    zephyr-nix = {
+      url = "github:nix-community/zephyr-nix";
+      inputs.zephyr.follows = "zephyr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Zephyr sdk and toolchain.
+
+    # Devicetree linter; use my fork for nix-package and ZMK-specific tweaks.
+    dts-linter.url = "github:urob/dts-linter/zmk";
+    dts-linter.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
-      self,
       nixpkgs,
-      zmk-nix,
+      zephyr-nix,
+      dts-linter,
+      ...
     }:
     let
-      forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      packages = forAllSystems (system: rec {
-        default = firmware;
-
-        firmware_dongle = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-          name = "firmware_dongle";
-
-          parts = [
-            "dongle"
-          ];
-
-          centralPart = "dongle";
-
-          src = nixpkgs.lib.sourceFilesBySuffices self [
-            ".board"
-            ".cmake"
-            ".conf"
-            ".defconfig"
-            ".dts"
-            ".dtsi"
-            ".json"
-            ".h"
-            ".keymap"
-            ".overlay"
-            ".shield"
-            ".yml"
-            "_defconfig"
-          ];
-
-          board = "xiao_ble//zmk";
-          shield = "spacetyl_%PART%";
-
-          zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
-
-          snippets = [
-            "zmk-usb-logging"
-          ];
-        };
-
-        firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-          name = "firmware";
-
-          parts = [
-            "left"
-            "right"
-            # "dongle"
-          ];
-
-          # centralPart = "dongle";
-
-          src = nixpkgs.lib.sourceFilesBySuffices self [
-            ".board"
-            ".cmake"
-            ".conf"
-            ".defconfig"
-            ".dts"
-            ".dtsi"
-            ".json"
-            ".h"
-            ".keymap"
-            ".overlay"
-            ".shield"
-            ".yml"
-            "_defconfig"
-          ];
-
-          board = "lemon_wireless";
-          shield = "spacetyl_%PART%";
-
-          zephyrDepsHash = "sha256-SPgBUgHDMlu7JDLfGQw/68CMnA/GKBHN+3qHp/QFRXY=";
-
-          extraCmakeFlags = [
-            "-DCONFIG_ZMK_SPLIT=y"
-            "-DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n"
-          ];
-          # enableZmkStudio = true;
-          # extraCmakeFlags = [
-          #   "DSHIELD=settings_reset"
-          # ];
-
-          snippets = [
-            "zmk-usb-logging"
-          ];
-
-          meta = {
-            description = "ZMK firmware";
-            license = nixpkgs.lib.licenses.mit;
-            platforms = nixpkgs.lib.platforms.all;
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          zephyr = zephyr-nix.packages.${system};
+          keymap_drawer = pkgs.python3Packages.callPackage ./nix/keymap-drawer.nix { };
+          dts-format = pkgs.callPackage ./nix/dts-format.nix {
+            dts-linter = dts-linter.packages.${system}.dev;
           };
-        };
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            packages = [
+              zephyr.pythonEnv
+              (zephyr.sdk-0_16.override { targets = [ "arm-zephyr-eabi" ]; })
 
-        flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
-        update = zmk-nix.packages.${system}.update;
-      });
+              pkgs.cmake
+              pkgs.dtc
+              pkgs.gcc
+              pkgs.ninja
 
-      devShells = forAllSystems (system: {
-        default = zmk-nix.devShells.${system}.default;
-      });
+              pkgs.just
+              pkgs.yq # Make sure yq resolves to python-yq.
+              pkgs.protobuf
+
+              keymap_drawer
+              dts-format
+            ];
+
+            env = {
+              PYTHONPATH = "${zephyr.pythonEnv}/${zephyr.pythonEnv.sitePackages}";
+            };
+
+            shellHook = ''
+              export ZMK_BUILD_DIR=$(pwd)/.build;
+              export ZMK_SRC_DIR=$(pwd)/zmk/app;
+            ''
+            + (
+              if pkgs.stdenv.isLinux then
+                let
+                  libatomic = pkgs.runCommand "libatomic" { } ''
+                    mkdir -p $out/lib
+                    cp -d ${pkgs.stdenv.cc.cc.lib}/lib/libatomic.so* $out/lib/
+                  '';
+                in
+                ''
+                  export LD_LIBRARY_PATH="${libatomic}/lib";
+                ''
+              else
+                ""
+            );
+            # ++ ''
+            #   exec fish
+            # '';
+          };
+        }
+      );
     };
 }

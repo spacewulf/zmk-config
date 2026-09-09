@@ -16,7 +16,8 @@
 #define BASE 0
 #define NAV 1
 #define NUM 2
-#define SYS 3
+#define FN 3
+#define SYS 4
 
 #define XXX &none
 #define ___ &trans
@@ -45,8 +46,18 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&excel_word NUM>; tapping-term-ms = <250>;)
 
+#define SMART_FN &smart_fn FN 0
+ZMK_HOLD_TAP(smart_fn, bindings = <&mo>, <&fn_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(fn_dance, bindings = <&sl FN>, <&tog FN>; tapping-term-ms = <250>;)
+
 #define SMART_SYS &smart_sys NAV 0
 ZMK_HOLD_TAP(smart_sys, bindings = <&mo>, <&sys_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+#define SMART_DEL &smart_del LC(DEL) DEL
+ZMK_HOLD_TAP(smart_del, bindings = <&kp>, <&kp>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+#define SMART_BSPC &smart_bspc LC(BSPC) BSPC
+ZMK_HOLD_TAP(smart_bspc, bindings = <&kp>, <&kp>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
 
 ZMK_TAP_DANCE(sys_dance, bindings = <&sl SYS>, <&tog SYS>; tapping-term-ms = <250>;)
 
@@ -96,15 +107,15 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LSHFT       &kp Z         &kp X         &kp C         &kp V        &kp B      ,    &kp N          &kp M       &comma_morph   &dot_morph     &kp FSLH      &kp RSHFT ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL       &kp LALT      &kp LBKT      &kp RBKT  ,                                                             &kp MINUS     &kp EQUAL     &kp RALT      &kp RCTRL ,
+    &kp LCTRL       &kp LALT      &kp LBKT      &kp RBKT                              ,                                 &kp MINUS     &kp EQUAL     &kp RALT      &kp RCTRL ,
 //╰─────────────┴─────────────┴─────────────┴─────────────╯                                                         ╰─────────────┴─────────────┴─────────────┴─────────────╯
 
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
                                                              SMART_SYS     &kp SPACE  ,    &kp RETURN    SMART_NUM  ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LALT     &kp DEL    ,    &kp BSPC       &kp ESC   ,
+                                                              &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     &kp LCTRL  ,    &kp RCTRL      &kp RGUI
+                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -124,9 +135,9 @@ ZMK_BASE_LAYER(Nav,
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
                                                               &mo 1        &kp SPACE  ,    &kp RETURN     &mo 2     ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LALT     &kp DEL    ,    &kp BSPC       &kp ESC   ,
+                                                              &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     &kp LCTRL  ,    &kp RCTRL      &kp RGUI
+                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -146,9 +157,31 @@ ZMK_BASE_LAYER(Num,
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
                                                                STD_UL      &kp SPACE  ,    &kp RETURN     &mo 2     ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LALT     &kp DEL    ,    &kp BSPC       &kp ESC   ,
+                                                              &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     &kp LCTRL  ,    &kp RCTRL      &kp RGUI
+                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+//                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
+)
+
+ZMK_BASE_LAYER(Fn,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+        ___           ___           ___          ___           ___         ___        ,       ___           ___           ___          ___           ___         ___        ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+        ___          &kp F12        &kp F7       &kp F8        &kp F9      ___        ,       ___           ___           ___          ___           ___         ___        ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LALT        &kp F11        &kp F4       &kp F5        &kp F6      ___        ,       ___           ___           ___          ___           ___         ___        ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LSHFT       &kp F10        &kp F1       &kp F2        &kp F3      ___        ,       ___           ___           ___          ___           ___         ___        ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LCTRL        ___           ___           ___                                 ,                                   ___          ___            ___          ___      ,
+//╰─────────────┴─────────────┴─────────────┴─────────────╯                                                         ╰─────────────┴─────────────┴─────────────┴─────────────╯
+
+//                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
+                                                               &mo 1       &kp SPACE  ,    &kp RETURN     &mo 2     ,
+//                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
+                                                              &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
+//                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
+                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -168,9 +201,9 @@ ZMK_BASE_LAYER(Sys,
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
                                                              SMART_SYS     &kp SPACE  ,    &kp RETURN     &mo 2     ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LALT     &kp DEL    ,    &kp BSPC       &kp ESC   ,
+                                                              &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     &kp LCTRL  ,    &kp RCTRL      &kp RGUI
+                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 // clang-format on
