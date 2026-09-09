@@ -2,6 +2,7 @@ default:
     @just --list --unsorted
 
 config := absolute_path('config')
+root := justfile_directory()
 build := absolute_path('.build')
 out := absolute_path('firmware')
 draw := absolute_path('draw')
@@ -24,7 +25,7 @@ _build_single $board $shield $snippet $artifact cmake_args *west_args:
 
     echo "Building firmware for $artifact..."
     west build -s zmk/app -d "$build_dir" -b $board {{ west_args }} ${snippet:+-S "$snippet"} -- \
-        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"} {{ cmake_args }}
+        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"} -DZMK_EXTRA_MODULES="{{ root }}" {{ cmake_args }}
 
     if [[ -f "$build_dir/zephyr/zmk.uf2" ]]; then
         mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out }}/$artifact.uf2"
