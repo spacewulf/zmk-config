@@ -6,23 +6,22 @@
     zephyr.url = "github:zmkfirmware/zephyr/v4.1.0+zmk-fixes";
     zephyr.flake = false;
 
+    # Zephyr sdk and toolchain.
     zephyr-nix = {
       url = "github:nix-community/zephyr-nix";
       inputs.zephyr.follows = "zephyr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Zephyr sdk and toolchain.
 
-    # Devicetree linter; use my fork for nix-package and ZMK-specific tweaks.
-    dts-linter.url = "github:urob/dts-linter/zmk";
-    dts-linter.inputs.nixpkgs.follows = "nixpkgs";
+    # West manifest locking; skipping the flake to build its package.nix with
+    # our own nixpkgs and python package set.
+    pin-west.url = "github:urob/pin-west";
+    pin-west.flake = false;
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
-      zephyr-nix,
-      dts-linter,
       ...
     }:
     let
@@ -39,10 +38,15 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          zephyr = zephyr-nix.packages.${system};
+          zephyr = inputs.zephyr-nix.packages.${system};
           keymap_drawer = pkgs.python3Packages.callPackage ./nix/keymap-drawer.nix { };
+          pin-west = pkgs.python3Packages.callPackage "${inputs.pin-west}/package.nix" { };
           dts-format = pkgs.callPackage ./nix/dts-format.nix {
-            dts-linter = dts-linter.packages.${system}.dev;
+            dts-linter = pkgs.callPackage ./nix/dts-linter.nix {
+              # Uncomment to build against the pinned dts-lsp instead of the
+              # server bundled with dts-linter.
+              # dts-lsp-serve r= pkgs.callPackage ./nix/dts-lsp-server.nix { };
+            };
           };
         in
         {
@@ -60,8 +64,9 @@
               pkgs.yq # Make sure yq resolves to python-yq.
               pkgs.protobuf
 
-              keymap_drawer
               dts-format
+              keymap_drawer
+              pin-west
             ];
 
             env = {
@@ -86,9 +91,6 @@
               else
                 ""
             );
-            # ++ ''
-            #   exec fish
-            # '';
           };
         }
       );
