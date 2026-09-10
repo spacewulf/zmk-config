@@ -58,6 +58,8 @@ ZMK_LEADER_SEQUENCE(el_tm, &uc 0x2122 0, T M)     // ω
 // BLE and USB
 /* ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B) */
 /* ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E) */
+ZMK_LEADER_SEQUENCE(sys, &tog SYS, S Y S)
+ZMK_LEADER_SEQUENCE(fn, &tog FN, F N)
 
 ZMK_LEADER_SEQUENCE(bt0, &bt BT_SEL 0, B N0)
 ZMK_LEADER_SEQUENCE(bt1, &bt BT_SEL 1, B N1)

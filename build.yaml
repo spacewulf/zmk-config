@@ -24,5 +24,5 @@ include:
   #   shield: settings_reset
   # - board: xiao_ble//zmk
   #   shield: settings_reset
-  - board: nice_nano//zmk
-    shield: settings_reset
+  # - board: nice_nano//zmk
+  #   shield: settings_reset

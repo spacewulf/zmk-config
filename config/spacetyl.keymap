@@ -61,6 +61,11 @@ ZMK_HOLD_TAP(smart_bspc, bindings = <&kp>, <&kp>; flavor = "balanced"; tapping-t
 
 ZMK_TAP_DANCE(sys_dance, bindings = <&sl SYS>, <&tog SYS>; tapping-term-ms = <250>;)
 
+#define LMOD_DANCE &lmod_dance
+#define RMOD_DANCE &rmod_dance
+ZMK_TAP_DANCE(lmod_dance, bindings = <&kp LGUI>, <&kp LG(SPACE)>; tapping-term-ms = <250>;)
+ZMK_TAP_DANCE(rmod_dance, bindings = <&kp RGUI>, <&kp RG(SPACE)>; tapping-term-ms = <250>;)
+
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
@@ -115,7 +120,7 @@ ZMK_BASE_LAYER(Base,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -137,7 +142,7 @@ ZMK_BASE_LAYER(Nav,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -159,7 +164,7 @@ ZMK_BASE_LAYER(Num,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -181,7 +186,7 @@ ZMK_BASE_LAYER(Fn,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -203,7 +208,7 @@ ZMK_BASE_LAYER(Sys,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              &kp LGUI     SMART_FN   ,    &kp RCTRL      &kp RGUI
+                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 // clang-format on
