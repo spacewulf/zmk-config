@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/vzhny
     - name: rianadon
       url-base: https://github.com/rianadon
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
 
   projects:
     - name: zmk
@@ -44,6 +46,11 @@ manifest:
       revision: d76327385ea269b1450888c574c05ccab22beee6
       path: modules/zmk/cosmos
       import: config/west.yml
+
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
+      path: modules/zmk/tri-state
 
     - name: zephyr
       remote: zmkfirmware
