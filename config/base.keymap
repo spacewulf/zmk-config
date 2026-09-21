@@ -47,10 +47,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&excel_word NUM>; tapping-term-ms = <250>;)
 
+
+ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+
 ZMK_TRI_STATE(
               smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
               ignored-key-positions =
-                <LN1 LN2 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
+                <LT1 LT2 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
               ignored-layers = <MOUSE NAV FN>;)
 
 #define SMART_FN &smart_fn FN 0
@@ -129,7 +133,7 @@ ZMK_BASE_LAYER(Base,
 //╰─────────────┴─────────────┴─────────────┴─────────────╯                                                         ╰─────────────┴─────────────┴─────────────┴─────────────╯
 
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
-                                                             SMART_SYS     &kp SPACE  ,     CR_DANCE     SMART_NUM  ,
+                                                             SMART_SYS     &kp SPACE  ,    &kp RETURN    SMART_NUM  ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
@@ -142,9 +146,9 @@ ZMK_BASE_LAYER(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp F12         &kp F1        &kp F2        &kp F3        &kp F4       &kp F5     ,    &kp F6         &kp F7        &kp F8        &kp F9        &kp F10      &kp F11    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        ___           ___        &kp C_PREV     &kp C_PP      &kp C_NEXT   VOL_UP     ,     ___            ___            ___          ___            ___          ___      ,
+        ___           ___        &kp C_PREV     &kp C_PP      &kp C_NEXT   VOL_UP     ,     ___           &swapper        ___          ___            ___          ___      ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &bootloader     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT    VOL_DN     ,    &kp LEFT       &kp DOWN       &kp UP      &kp RIGHT        ___          ___      ,
+    &bootloader   &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F   VOL_DN     ,    &kp LEFT       &kp DOWN       &kp UP      &kp RIGHT        ___          ___      ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LSHFT       &kp Z         &kp X         &kp C         &kp V        &kp B      ,    &kp N          &kp M       &comma_morph   &dot_morph     &kp FSLH     &kp RSHFT  ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -152,11 +156,11 @@ ZMK_BASE_LAYER(Nav,
 //╰─────────────┴─────────────┴─────────────┴─────────────╯                                                         ╰─────────────┴─────────────┴─────────────┴─────────────╯
 
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
-                                                              &mo 1        &kp SPACE  ,     CR_DANCE      &mo 2     ,
+                                                              &mo 1        &kp SPACE  ,    &kp RETURN     &mo 2     ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
-                                                              LMOD_DANCE   SMART_FN   ,    &kp RCTRL    RMOD_DANCE
+                                                             LMOD_DANCE    SMART_FN   ,    &kp RCTRL    RMOD_DANCE
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -262,7 +266,7 @@ ZMK_BASE_LAYER(Gaming,
 //╰─────────────┴─────────────┴─────────────┴─────────────╯                                                         ╰─────────────┴─────────────┴─────────────┴─────────────╯
 
 //                                                        ╭─────────────┬─────────────╮ ╭─────────────┬─────────────╮
-                                                             SMART_SYS     &kp SPACE  ,     CR_DANCE     SMART_NUM  ,
+                                                             SMART_SYS     &kp SPACE  ,    &kp RETURN    SMART_NUM  ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
                                                               &kp LALT     SMART_DEL  ,    SMART_BSPC     &kp ESC   ,
 //                                                        ├─────────────┼─────────────┤ ├─────────────┼─────────────┤
