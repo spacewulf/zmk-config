@@ -47,5 +47,5 @@
 
 };
 
-/* vik_i2c: &i2c0 {}; */
-/* vik_spi: &spi1 {}; */
+vik_i2c: &i2c0 {};
+vik_spi: &spi1 {};
