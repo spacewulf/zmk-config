@@ -44,10 +44,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced"; tapping-term-ms = <250>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&excel_word NUM>; tapping-term-ms = <250>;)
 
+
+ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+
 ZMK_TRI_STATE(
               smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
               ignored-key-positions =
-                <LN1 LN2 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
+                <LT1 LT2 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
               ignored-layers = <MOUSE NAV FN>;)
 
 #define SMART_FN &smart_fn FN 0
