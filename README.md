@@ -2,6 +2,9 @@
 
 ## Basic Setup
 
+This is the _old_ version of my ZMK config; this is for my 68-key 'spacetyl'
+keyboard.
+
 This is my ZMK configuration for my custom Cosmos build. It features plenty of
 features from a dongle to zmk-leader-key and zmk-unicode.
 
