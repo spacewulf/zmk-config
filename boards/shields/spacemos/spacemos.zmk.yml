@@ -1,0 +1,10 @@
+file_format: "1"
+id: spacemos
+name: spacemos
+type: shield
+url: https://github.com/spacewulf/zmk-config-new
+features:
+  - keys
+siblings:
+  - spacemos_left
+  - spacemos_right
