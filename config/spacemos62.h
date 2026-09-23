@@ -1,15 +1,14 @@
 // clang-format off
-/*                                      68 KEY MATRIX / LAYOUT MAPPING
+/*                                      62 KEY MATRIX / LAYOUT MAPPING
 
   ╭────────────────────────┬────────────────────────╮ ╭─────────────────────────┬─────────────────────────╮
   │  0   1   2   3   4   5 │  6   7   8   9  10  11 │ │ LN5 LN4 LN3 LN2 LN1 LN0 │ RN0 RN1 RN2 RN3 RN4 RN5 │
   │ 12  13  14  15  16  17 │ 18  19  20  21  22  23 │ │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
   │ 24  25  26  27  28  29 │ 30  31  32  33  34  35 │ │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
   │ 36  37  38  39  40  41 │ 42  43  44  45  46  47 │ │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
-  │ 48  49  50  51         │         52  53  54  55 │ │ LF3 LF2 LF1 LF0         │         RF0 RF1 RF2 RF3 │
-  ╰───────────────╮ 56  57 │ 58  59 ╭───────────────╯ ╰───────────────╮ LH1 LH0 │ RH0 RH1 ╭───────────────╯
-                  │ 60  61 │ 62  63 │                                 │ LH3 LH2 │ RH2 RH3 │
-                  │ 64  65 │ 66  67 │                                 │ LH5 LH4 │ RH4 RH5 │
+  │         48  49         │         50  51         │ │         LF1 LF0         │         RF0 RF1         │
+  ╰───────────╮ 52  53  54 │ 55  56  57 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰───╮ 58  59 │ 60  61 ╭───╯                         ╰───╮ LH4 LH3 │ RH3 RH4 ╭───╯
                   ╰────────┴────────╯                                 ╰─────────┴─────────╯             */
 
 // clang-format on
@@ -72,47 +71,31 @@
 #define RB4 46
 #define RB5 47
 
-#define LF0 51 // left-function row
-#define LF1 50
-#define LF2 49
-#define LF3 48
+#define LF0 49 // left-function row
+#define LF1 48
 
-#define RF0 52 // right-function row
-#define RF1 53
-#define RF2 54
-#define RF3 55
+#define RF0 50 // right-function row
+#define RF1 51
 
-#define LF0 51 // left-function row
-#define LF1 50
-#define LF2 49
-#define LF3 48
+#define LH0 54 // left thumb keys
+#define LH1 53
+#define LH2 52
+#define LH3 59
+#define LH4 58
 
-#define RF0 52 // right-function row
-#define RF1 53
-#define RF2 54
-#define RF3 55
-
-#define LH0 57 // left thumb keys
-#define LH1 56
-#define LH2 61
-#define LH3 60
-#define LH4 65
-#define LH5 64
-
-#define RH0 58 // right thumb keys
-#define RH1 59
-#define RH2 62
-#define RH3 63
-#define RH4 66
-#define RH5 67
+#define RH0 55 // right thumb keys
+#define RH1 56
+#define RH2 57
+#define RH3 60
+#define RH4 61
 
 #define NUMROW LN0 LN1 LN2 LN3 LN4 LN5 RN0 RN1 RN2 RN3 RN4 RN5
 #define KEYS_L                                                                 \
   LN0 LN1 LN2 LN3 LN4 LN5 LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0  \
-      LB1 LB2 LB3 LB4 LB5 LF0 LF1 LF2 LF3 LH0 LH1 LH2 LH3 LH4 LH5
+      LB1 LB2 LB3 LB4 LB5 LF0 LF1 LH0 LH1 LH2 LH3 LH4
 #define KEYS_R                                                                 \
   RN0 RN1 RN2 RN3 RN4 RN5 RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0  \
-      RB1 RB2 RB3 RB4 RB5 RF0 RF1 RF2 RF3 RH0 RH1 RH2 RH3 RH4 RH5
-#define THUMBS_L LH0 LH1 LH2 LH3 LH4 LH5
-#define THUMBS_R RH0 RH1 RH2 RH3 RH4 RH5
+      RB1 RB2 RB3 RB4 RB5 RF0 RF1 RH0 RH1 RH2 RH3 RH4
+#define THUMBS_L LH0 LH1 LH2 LH3 LH4
+#define THUMBS_R RH0 RH1 RH2 RH3 RH4
 #define THUMBS THUMBS_L THUMBS_R

@@ -5,21 +5,20 @@
 #define COMBO_IDLE_SLOW 50
 
 /*                      Current Layout
-    ╭─────────────────────────┬─────────────────────────╮
-    │ LN5 LN4 LN3 LN2 LN1 LN0 │ RN0 RN1 RN2 RN3 RN4 RN5 │
-    │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
-    │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
-    │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
-    │ LF3 LF2 LF1 LF0         │         RF0 RF1 RF2 RF3 │
-    ╰───────────────╮ LH1 LH0 │ RH0 RH1 ╭───────────────╯
-                    │ LH3 LH2 │ RH2 RH3 │
-                    │ LH5 LH4 │ RH4 RH5 │
-                    ╰─────────┴─────────╯             */
+   ╭─────────────────────────┬─────────────────────────╮
+   │ LN5 LN4 LN3 LN2 LN1 LN0 │ RN0 RN1 RN2 RN3 RN4 RN5 │
+   │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+   │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+   │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+   │         LF1 LF0         │         RF0 RF1         │
+   ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+               ╰───╮ LH4 LH3 │ RH3 RH4 ╭───╯
+                   ╰─────────┴─────────╯             */
 
 // Right Hand: Escape (J K)
 /* ZMK_COMBO(esc, &kp ESC, RM1 RM2, BASE NAV NUM SYS, COMBO_TERM_FAST, COMBO_IDLE_FAST) */
 // Left Hand: Leader
-ZMK_COMBO(ldr, &leader, LH1 LH0, BASE NAV NUM SYS GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST,
+ZMK_COMBO(ldr, &leader, LH2 LH1, BASE NAV NUM SYS GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST,
           LS(LCTRL), KEYS_R)
 
 // Mouse
@@ -50,5 +49,5 @@ ZMK_COMBO(rbrc, &kp RBRC, RB2 RB3, BASE NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAS
 /*           COMBO_IDLE_FAST) */
 
  // Both Hand Combos
-ZMK_COMBO(nlr, &tog 0, LH1 RH1, BASE NAV NUM SYS, COMBO_TERM_FAST,
+ZMK_COMBO(nlr, &tog 0, LH2 RH2, BASE NAV NUM SYS, COMBO_TERM_FAST,
           COMBO_IDLE_FAST)

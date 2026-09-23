@@ -15,12 +15,8 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: 268b1b1e82150460f00fd701bcd08583d5c75d29
-      # path: modules/firmware/zmk
       import: app/west.yml
-    # - name: zmk
-    #   remote: rianadon
-    #   revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
-    #   import: app/west.yml
+
     - name: zmk-unicode
       remote: urob
       revision: 5f458b6f1fd8ca83f4aba793c2a64916522507e9
@@ -69,33 +65,3 @@ manifest:
 
   self:
     path: config
-
-# manifest:
-#   remotes:
-#     - name: zmkfirmware
-#       url-base: https://github.com/zmkfirmware
-#     - name: rianadon
-#       url-base: https://github.com/rianadon
-#     - name: urob
-#       url-base: https://github.com/urob
-#
-#   projects:
-#     - name: zmk
-#       remote: rianadon
-#       revision: 4fc05c26b8faa35081282d58abc84fb6bd1b52bd
-#       import: app/west.yml
-#
-#     - name: zmk-unicode
-#       remote: urob
-#       revision: v0.3
-#
-#     - name: zmk-helpers
-#       remote: urob
-#       revision: v0.3
-#
-#     - name: zmk-leader-key
-#       remote: urob
-#       revision: v0.3
-#
-#   self:
-#     path: config
