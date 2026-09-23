@@ -61,7 +61,7 @@ clean:
 
 # clear all automatically generated files
 clean-all: clean
-    rm -rf .west zmk
+    rm -rf .west zmk modules
 
 # clear nix cache
 clean-nix:
