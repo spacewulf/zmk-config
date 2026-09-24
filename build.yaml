@@ -32,6 +32,3 @@ include:
 
   - board: nice_nano//zmk
     shield: spacemos_dongle
-
-  - board: nice_nano//zmk
-    shield: settings_reset
