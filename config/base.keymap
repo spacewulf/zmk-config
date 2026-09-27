@@ -109,7 +109,6 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define VOL_UP &kp C_VOLUME_UP
 #define VOL_DN &kp C_VOLUME_DOWN
 #define NUM_LK &kp KP_NUMLOCK
-#define STD_UL &studio_unlock
 #define NP_MUL &kp KP_MULTIPLY
 #define NP_DIV &kp KP_DIVIDE
 #define NP_ADD &kp KP_PLUS
@@ -251,7 +250,7 @@ ZMK_BASE_LAYER(Gaming,
 //                                          ╭─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────╮
                                                   ___           ___           ___     ,       ___           ___           ___     ,
 //                                          ╰─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────╯
-                                                                ___           ___     ,       ___           ___
+                                                              &kp LALT        ___     ,       ___           ___
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -273,20 +272,6 @@ ZMK_BASE_LAYER(Gaming,
                                                                 // ___           ___     ,       ___           ___
 //                                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 
-// / {
-//   keymap {
-//     compatible = "zmk,keymap";
-//     default_layer {
-//       bindings = <&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp GRAVE
-//       &kp TAB &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U &kp I &kp O &kp P &kp BSLH
-//       &kp LSHFT &kp A &kp S &kp D &kp F &kp G                     &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
-//       &kp LCTRL &kp Z &kp X &kp C &kp V &kp B                     &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-//                       &kp LBKT &kp RBKT                                       &kp MINUS &kp EQUAL
-//                       &kp N0 &kp SPACE &kp DEL                    &kp BSPC &kp RETURN &kp N2
-//                              &bootloader &kp LGUI                 &kp RGUI &bootloader>;
-//     };
-//   };
-// };
 // clang-format on
 
 /* vim: set ft=c tw=146: */
